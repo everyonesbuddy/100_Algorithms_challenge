@@ -15,14 +15,27 @@
 // }
 
 //working solution
-function adjacentElementsProduct(arr){
+// function adjacentElementsProduct(arr){
+//     let largestProduct = arr[0] * arr[1];
+
+//     for(let i = 1; i < arr.length; i++){
+//         const product = arr[i] * arr[i + 1];
+//         largestProduct = largestProduct < product ? product : largestProduct;
+//     }
+
+//     return largestProduct
+// }
+
+//revision
+function adjacentElementsProduct(arr) {
     let largestProduct = arr[0] * arr[1];
 
-    for(let i = 1; i < arr.length; i++){
+    for(let i = 0; i < arr.length; i++) {
         const product = arr[i] * arr[i + 1];
-        largestProduct = largestProduct < product ? product : largestProduct;
+        if(product > largestProduct) {
+            largestProduct = product
+        }
     }
-
     return largestProduct
 }
 

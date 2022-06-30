@@ -24,13 +24,25 @@
 // }
 
 //alternate solution
-function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
-    const yourWeakest = yourLeft <= yourRight ? yourLeft : yourRight;
-    const yourStrongest = yourLeft >= yourRight ? yourLeft : yourRight;
-    const friendWeakest = friendsLeft <= friendsRight ? friendsLeft : friendsRight;
-    const friendStrongest = friendsLeft >= friendsRight ? friendsLeft : friendsRight;
+// function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
+//     const yourWeakest = yourLeft <= yourRight ? yourLeft : yourRight;
+//     const yourStrongest = yourLeft >= yourRight ? yourLeft : yourRight;
+//     const friendWeakest = friendsLeft <= friendsRight ? friendsLeft : friendsRight;
+//     const friendStrongest = friendsLeft >= friendsRight ? friendsLeft : friendsRight;
 
-    return yourStrongest === friendStrongest && yourWeakest === friendWeakest
+//     return yourStrongest === friendStrongest && yourWeakest === friendWeakest
+// }
+
+//Revision
+function areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight) {
+    let yourStrength = yourLeft + yourRight
+    let friendStrength = friendsLeft + friendsRight
+
+    if(yourStrength === friendStrength) {
+        return true
+    } else {
+        return false
+    }
 }
 
 

@@ -20,19 +20,36 @@
 //     return [teamOneTotalWeight, teamTwoTotalWeight]
 // }
 
-function alternatingSums(arr) {
+// function alternatingSums(arr) {
+//     let evenSum = 0;
+//     let oddSum = 0;
+
+//     arr.forEach((element, index) => {
+//         if(index % 2 === 0){
+//             evenSum += element
+//         }else {
+//             oddSum += element
+//         }
+//     })
+
+//     return [evenSum, oddSum]
+// }
+
+//Revision
+function alternatingSums (arr) {
     let evenSum = 0;
     let oddSum = 0;
 
-    arr.forEach((element, index) => {
-        if(index % 2 === 0){
-            evenSum += element
-        }else {
-            oddSum += element
-        }
-    })
-
-    return [evenSum, oddSum]
+//loop through existing arr
+for(let i = 0; i < arr.length; i++) {
+//check ifposition is even or odd and push to teams based on that
+if(arr.indexOf(arr[i]) % 2 === 0) {
+    evenSum += arr[i]
+} else {
+    oddSum += arr[i]
 }
 
+}
+return [evenSum, oddSum]
+}
 console.log(alternatingSums([50, 60, 60, 45, 70]))

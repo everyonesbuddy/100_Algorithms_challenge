@@ -18,27 +18,46 @@
 //         } else {
 //             return newArr
 //         }
-        
+
 //     }
 //     return newArr
 // }
 
 //working string
-function allLongestStrings (arr) {
-    let longestLength = 0;
-    const longestWords = []
+// function allLongestStrings (arr) {
+//     let longestLength = 0;
+//     const longestWords = []
 
-    arr.forEach((word) =>  {
-        longestLength = longestLength < word.length ? word.length : longestLength;
-    });
+//     arr.forEach((word) =>  {
+//         longestLength = longestLength < word.length ? word.length : longestLength;
+//     });
 
-    arr.forEach((word) => {
-        if(word.length === longestLength){
-            longestWords.push(word)
+//     arr.forEach((word) => {
+//         if(word.length === longestLength){
+//             longestWords.push(word)
+//         }
+//     })
+
+//     return longestWords
+// }
+
+//revision
+function allLongestStrings(arr) {
+    let initialstringLength = 0
+    const newArr = [];
+
+    for(let i = 0; i < arr.length; i++) {
+        let longestString = arr[i].length
+        if(longestString > initialstringLength) {
+            initialstringLength = longestString
         }
-    })
+        if(arr[i].length === initialstringLength) {
+            newArr.push(arr[i])
+        }
 
-    return longestWords
+
+    }
+    return newArr
 }
 
 console.log(allLongestStrings(["aba", "aa", "ad", "vcd", "aba"]));
