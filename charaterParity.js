@@ -15,13 +15,27 @@
 
 //working solution
 
+// function characterParity(symbol) {
+
+// let solution = parseInt(symbol);
+
+
+
+// return isNaN(solution) ? 'not a digit' : solution % 2 === 0 ? 'even' : 'odd'
+// }
+
+//Revision
+
 function characterParity(symbol) {
+  let value = parseInt(symbol);
 
-let solution = parseInt(symbol);
-
-
-
-return isNaN(solution) ? 'not a digit' : solution % 2 === 0 ? 'even' : 'odd'
+  if(isNaN(value)) {
+    return "Not a digit"
+  } else if(value % 2 === 0) {
+    return "Even"
+  } else {
+    return "Odd"
+  }
 }
 
 
